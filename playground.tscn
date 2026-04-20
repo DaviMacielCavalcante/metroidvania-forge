@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://8lidg4hqe43w"]
+
+[ext_resource type="Texture2D" uid="uid://0otpwaxe7jvt" path="res://33321-4-soul-eater.png" id="2_wt17y"]
+
+[node name="Node2D" type="Node2D" unique_id=334998262]
+
+[node name="333214SoulEater" type="Sprite2D" parent="." unique_id=1495558027]
+position = Vector2(270, 125)
+scale = Vector2(0.40039063, 0.3828125)
+texture = ExtResource("2_wt17y")
