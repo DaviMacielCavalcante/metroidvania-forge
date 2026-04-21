@@ -1,10 +1,74 @@
 [gd_scene format=3 uid="uid://8lidg4hqe43w"]
 
-[ext_resource type="Texture2D" uid="uid://0otpwaxe7jvt" path="res://33321-4-soul-eater.png" id="2_wt17y"]
+[ext_resource type="PackedScene" uid="uid://cfa3xni5hj64u" path="res://player/player.tscn" id="1_rupst"]
 
-[node name="Node2D" type="Node2D" unique_id=334998262]
+[sub_resource type="Gradient" id="Gradient_edjgo"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
 
-[node name="333214SoulEater" type="Sprite2D" parent="." unique_id=1495558027]
-position = Vector2(270, 125)
-scale = Vector2(0.40039063, 0.3828125)
-texture = ExtResource("2_wt17y")
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rupst"]
+gradient = SubResource("Gradient_edjgo")
+width = 32
+height = 32
+fill_from = Vector2(1, 0)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_edjgo"]
+size = Vector2(32, 32.26556)
+
+[node name="Playground" type="Node2D" unique_id=334998262]
+
+[node name="Ground" type="Sprite2D" parent="." unique_id=1407103890]
+position = Vector2(241, 259)
+scale = Vector2(15.812501, 1)
+texture = SubResource("GradientTexture2D_rupst")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground" unique_id=1227674670]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D" unique_id=1591787054]
+shape = SubResource("RectangleShape2D_edjgo")
+
+[node name="Platform" type="Sprite2D" parent="Ground" unique_id=1316053691]
+position = Vector2(-7.4239244, -82)
+scale = Vector2(0.17941028, 1)
+texture = SubResource("GradientTexture2D_rupst")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground/Platform" unique_id=890702596]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/Platform/StaticBody2D" unique_id=856621637]
+shape = SubResource("RectangleShape2D_edjgo")
+
+[node name="Ceiling" type="Sprite2D" parent="." unique_id=1283591235]
+position = Vector2(240, -15.000002)
+scale = Vector2(15.812501, 1.1249999)
+texture = SubResource("GradientTexture2D_rupst")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ceiling" unique_id=1364195449]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling/StaticBody2D" unique_id=1587176727]
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_edjgo")
+
+[node name="Player" parent="." unique_id=1424547944 instance=ExtResource("1_rupst")]
+position = Vector2(102, 145)
+
+[node name="WallLeft" type="Sprite2D" parent="." unique_id=652556953]
+position = Vector2(33, 122.50001)
+scale = Vector2(2.8125007, 7.53125)
+texture = SubResource("GradientTexture2D_rupst")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="WallLeft" unique_id=1443899258]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallLeft/StaticBody2D" unique_id=732830943]
+position = Vector2(0, -0.13278008)
+scale = Vector2(0.9999999, 0.99999994)
+shape = SubResource("RectangleShape2D_edjgo")
+
+[node name="WallRight" type="Sprite2D" parent="WallLeft" unique_id=1907538042]
+position = Vector2(150.9833, -0.032257974)
+scale = Vector2(0.7920146, 0.99798393)
+texture = SubResource("GradientTexture2D_rupst")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="WallLeft/WallRight" unique_id=1080545943]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallLeft/WallRight/StaticBody2D" unique_id=1584279872]
+shape = SubResource("RectangleShape2D_edjgo")
