@@ -13,7 +13,7 @@ fill_from = Vector2(1, 0)
 fill_to = Vector2(0, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_edjgo"]
-size = Vector2(32, 32.26556)
+size = Vector2(32, 32)
 
 [node name="Playground" type="Node2D" unique_id=334998262]
 
@@ -28,8 +28,8 @@ texture = SubResource("GradientTexture2D_rupst")
 shape = SubResource("RectangleShape2D_edjgo")
 
 [node name="Platform" type="Sprite2D" parent="Ground" unique_id=1316053691]
-position = Vector2(-7.4239244, -82)
-scale = Vector2(0.17941028, 1)
+position = Vector2(11.636362, -66)
+scale = Vector2(0.15492252, 3.21875)
 texture = SubResource("GradientTexture2D_rupst")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Ground/Platform" unique_id=890702596]
@@ -49,11 +49,11 @@ scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_edjgo")
 
 [node name="Player" parent="." unique_id=1424547944 instance=ExtResource("1_rupst")]
-position = Vector2(102, 145)
+position = Vector2(346, 88)
 
 [node name="WallLeft" type="Sprite2D" parent="." unique_id=652556953]
-position = Vector2(33, 122.50001)
-scale = Vector2(2.8125007, 7.53125)
+position = Vector2(5.9999943, 122.50001)
+scale = Vector2(1.1250004, 7.53125)
 texture = SubResource("GradientTexture2D_rupst")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="WallLeft" unique_id=1443899258]
@@ -64,11 +64,34 @@ scale = Vector2(0.9999999, 0.99999994)
 shape = SubResource("RectangleShape2D_edjgo")
 
 [node name="WallRight" type="Sprite2D" parent="WallLeft" unique_id=1907538042]
-position = Vector2(150.9833, -0.032257974)
+position = Vector2(420.44427, 0.3319492)
 scale = Vector2(0.7920146, 0.99798393)
 texture = SubResource("GradientTexture2D_rupst")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="WallLeft/WallRight" unique_id=1080545943]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallLeft/WallRight/StaticBody2D" unique_id=1584279872]
+shape = SubResource("RectangleShape2D_edjgo")
+
+[node name="Platform" type="Sprite2D" parent="." unique_id=734329627]
+position = Vector2(162.41449, 238.8302)
+rotation = 0.5382931
+scale = Vector2(6.9557967, 3.0693321)
+skew = -0.20530355
+texture = SubResource("GradientTexture2D_rupst")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Platform" unique_id=1613431776]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform/StaticBody2D" unique_id=6907982]
+shape = SubResource("RectangleShape2D_edjgo")
+
+[node name="Platform2" type="Sprite2D" parent="." unique_id=948993499]
+position = Vector2(53.195435, 189.5)
+scale = Vector2(1.8360586, 3.31543)
+texture = SubResource("GradientTexture2D_rupst")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Platform2" unique_id=2134477896]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2/StaticBody2D" unique_id=2139314048]
+scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_edjgo")
